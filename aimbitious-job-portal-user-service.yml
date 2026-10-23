@@ -1,5 +1,5 @@
 server:
-  port: 5001
+  port: ${PORT:5001}
 
 spring:
   jpa:
@@ -13,9 +13,9 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
 
   datasource:
-    url: jdbc:postgresql://localhost:5432/aimbitious_job_portal_user
-    username: postgres
-    password: pg123
+    url: ${SPRING_DATASOURCE_URL}
+    username: ${SPRING_DATASOURCE_USERNAME}
+    password: ${SPRING_DATASOURCE_PASSWORD}
     driver-class-name: org.postgresql.Driver
 
 eureka:
@@ -23,6 +23,7 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
     service-url:
-      defaultZone: http://localhost:8761/eureka/
-    instance:
-      prefer-ip-address: true
+      defaultZone: https://aimbitious-service-registry.onrender.com/eureka/
+
+  instance:
+    prefer-ip-address: true
