@@ -1,11 +1,12 @@
 server:
-  port: 6000
+  port: ${PORT:6000}
 
 eureka:
   client:
     fetch-registry: true
     register-with-eureka: true
     service-url:
-      defaultZone: https://aimbitious-service-registry.onrender.com
-    instance:
-      prefer-ip-address: true
+      defaultZone: https://aimbitious-service-registry.onrender.com/eureka/
+
+  instance:
+    prefer-ip-address: true
