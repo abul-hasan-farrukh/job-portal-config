@@ -1,12 +1,21 @@
 server:
   port: ${PORT:5000}
 
+spring:
+  cloud:
+    gateway:
+      server:
+        webmvc:
+          discovery:
+            locator:
+              enabled: true
+              lower-case-service-id: true
+
 eureka:
   client:
     fetch-registry: true
     register-with-eureka: true
     service-url:
       defaultZone: https://aimbitious-service-registry.onrender.com/eureka/
-
   instance:
     prefer-ip-address: true
