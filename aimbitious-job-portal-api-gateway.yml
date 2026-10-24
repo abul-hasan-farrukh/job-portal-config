@@ -6,6 +6,11 @@ spring:
     gateway:
       server:
         webmvc:
+          routes:
+            - id: user-service
+              uri: lb://aimbitious-job-portal-user-service
+              predicates:
+                - Path=/auth/**,/api/users/**
           discovery:
             locator:
               enabled: true
