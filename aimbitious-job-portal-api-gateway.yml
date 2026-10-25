@@ -31,6 +31,12 @@ spring:
               predicates:
                 - Path=/api/companies/**
 
+            # Resume Service route
+            - id: resume-service
+              uri: lb://aimbitious-job-portal-resume-service
+              predicates:
+                - Path=/api/resumes/**
+
           discovery:
             locator:
               enabled: true
