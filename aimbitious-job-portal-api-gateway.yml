@@ -25,7 +25,11 @@ spring:
               predicates:
                 - Path=/api/applications/**
 
-
+            # Company Service route -
+            - id: company-service
+              uri: lb://aimbitious-job-portal-company-service
+              predicates:
+                - Path=/api/companies/**
 
           discovery:
             locator:
