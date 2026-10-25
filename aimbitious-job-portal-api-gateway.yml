@@ -7,7 +7,7 @@ spring:
       server:
         webmvc:
           routes:
-#            User Service routes -
+            # User Service routes -
             - id: user-service
               uri: lb://aimbitious-job-portal-user-service
               predicates:
@@ -18,6 +18,13 @@ spring:
               uri: lb://aimbitious-job-portal-job-service
               predicates:
                   - Path=/api/jobs/**,/api/job-categories/**,/api/job-skills/**,/api/job-tags/**
+
+            # Application Service route -
+            - id: application-service
+              uri: lb://aimbitious-job-portal-application-service
+              predicates:
+                - Path=/api/applications/**
+
 
 
           discovery:
