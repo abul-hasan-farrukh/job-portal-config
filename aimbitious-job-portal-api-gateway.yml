@@ -43,17 +43,23 @@ spring:
               predicates:
                 - Path=/api/preferences/**
 
-            # AI Service - Main AI endpoints
+            # AI Service - Main AI endpoints -
             - id: ai-service
               uri: lb://aimbitious-job-portal-ai-service
               predicates:
                 - Path=/api/ai/**
 
-            # AI Service - Search enhancement and job alert suggestions
+            # AI Service - Search enhancement and job alert suggestions -
             - id: ai-search-service
               uri: lb://aimbitious-job-portal-ai-service
               predicates:
                 - Path=/enhance,/alert-suggestion
+
+            # Notification Service route -
+            - id: notification-service
+              uri: lb://aimbitious-job-portal-notification-service
+              predicates:
+                - Path=/api/notifications/**
 
           discovery:
             locator:
