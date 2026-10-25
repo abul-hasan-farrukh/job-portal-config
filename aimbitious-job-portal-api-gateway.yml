@@ -31,11 +31,17 @@ spring:
               predicates:
                 - Path=/api/companies/**
 
-            # Resume Service route
+            # Resume Service route -
             - id: resume-service
               uri: lb://aimbitious-job-portal-resume-service
               predicates:
                 - Path=/api/resumes/**
+
+            # Preference Service route -
+            - id: preference-service
+              uri: lb://aimbitious-job-portal-preference-service
+              predicates:
+                - Path=/api/preferences/**
 
           discovery:
             locator:
